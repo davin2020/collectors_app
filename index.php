@@ -1,3 +1,7 @@
+<?php
+require ('functions.php');
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -22,7 +26,7 @@
             <!--            <article class=" section__box-emphasis">-->
             <h2>Film</h2>
             <p>Name</p>
-            <p>Year Produced fgdfdgdgdsfgdfgdfgdfg d dfgdsfgsdfsgdfgdffg</p>
+            <p>Year Produced:</p>
             <p>Genre</p>
             <p>Roles</p>
             <!--                <div>-->
@@ -30,18 +34,30 @@
             <!--                </div>-->
             <!--            </article>-->
         </article>
-        <article class="container__film">
-            <!--            <article class=" section__box-emphasis">-->
-            <h2>Film</h2>
-            <p>Name</p>
-            <p>Year Produced fgdfdgdgdsfgdfgdfgdfg d dfgdsfgsdfsgdfgdffg</p>
-            <p>Genre</p>
-            <p>Roles</p>
-            <!--                <div>-->
-            <!--                    <p class="title-subheading">Web Developer in UK & NZ</p>-->
-            <!--                </div>-->
-            <!--            </article>-->
-        </article>
+
+            <?php
+            //            $result =  getAllFilms();
+            $result =  getAllFilmsWithoutRoles('collectors_db');
+            var_dump($result);
+            echo '<br><br>';
+
+            $temp_string = displayFilmsWithoutRoles($result);
+            var_dump($temp_string);
+
+//            foreach($result as $key => $value) {
+//                echo '<article class="container__film">';
+//                echo '<br><br>';
+//                echo '<h2>Film: ' . $result[$key]['title'] . '</h2>' ;
+//                echo '<p>ID: ' . $result[$key]['id'] . '</p>';
+//                echo '<p>Year Produced: ' .  $result[$key]['year_produced'] . '</p>';
+//                echo '<p>Genre: ' . $result[$key]['type'] . '</p>';
+//                echo '<br><br>';
+//                echo '</article>';
+//            }
+//            var_dump($result);
+            ?>
+
+
     </section>
 
     <section class="layout__add-items">
@@ -57,3 +73,15 @@
 
 </body>
 </html>
+
+<?php
+//                echo $result[$key]['type'];
+//echo $result[$key][$value];
+//                echo '<br>key: ' . $key . '<br>val: ' . $value;
+//echo $result[$key]['id'];
+//                echo $result[$key]['year_produced'];
+
+//echo $key . " : " . $value . "<br>";
+//                $result->fetch();
+
+?>
