@@ -1,4 +1,4 @@
-/* standard css template */
+/* CSS file for Collections App */
 
 * {
     box-sizing: border-box;
@@ -8,7 +8,6 @@ body {
     padding: 0;
     margin: 0;
     background-color: #2A546E ;
-/*skyblue #1C384A*/
     font-family: Verdana;
     font-size: 90%;
 }
@@ -17,34 +16,34 @@ header {
     text-align: center;
     font-size: 120%;
 }
-/*section__container*/
+
 .layout__collections {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: space-around;
     width: 100%;
-
 }
 
-/*section__box-emphasis*/
+.layout__button-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    width: 100%;
+}
+
 .container__film {
-    /*display:flex;*/
-/*lightsteelblue #387093*/
     background-color: #468CB8;
     padding: 25px;
     margin: 20px;
     flex: 1 1 250px;
 }
 
-
 h1 {
     color: #FFFFFF;
     background-color: #571867;
     vertical-align: middle;
-    /* need to set top & bottom margins to 0 so there is no space between the text for the Title-Name and Title-Subheading  */
-    margin-top: 0;
-    margin-bottom: 0;
     padding: 20px;
     font-size: 250%;
     font-family:'Monotype Corsiva','Apple Chancery','ITC Zapf Chancery','URW Chancery L',cursive;
@@ -67,3 +66,8 @@ footer {
     background-color: #571867;
     color: #FFFFFF;
 }
+
+/* COLORS
+skyblue #1C384A
+lightsteelblue #387093
+*/
