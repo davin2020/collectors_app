@@ -7,7 +7,8 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: skyblue;
+    background-color: #2A546E ;
+/*skyblue #1C384A*/
     font-family: Verdana;
     font-size: 90%;
 }
@@ -29,8 +30,9 @@ header {
 /*section__box-emphasis*/
 .container__film {
     /*display:flex;*/
-    background-color: lightsteelblue;
-    padding: 10px;
+/*lightsteelblue #387093*/
+    background-color: #468CB8;
+    padding: 25px;
     margin: 20px;
     flex: 1 1 250px;
 }
@@ -52,8 +54,10 @@ h1 {
 .layout__add-items {
     width: 50%;
     padding:20px;
+    margin: 20px;
     text-align: center;
-    border: 2px solid blue;
+    border: 2px solid black;
+    background-color: gray;
 }
 
 footer {
