@@ -1,0 +1,65 @@
+/* standard css template */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: skyblue;
+    font-family: Verdana;
+    font-size: 90%;
+}
+
+header {
+    text-align: center;
+    font-size: 120%;
+}
+/*section__container*/
+.layout__collections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    width: 100%;
+
+}
+
+/*section__box-emphasis*/
+.container__film {
+    /*display:flex;*/
+    background-color: lightsteelblue;
+    padding: 10px;
+    margin: 20px;
+    flex: 1 1 250px;
+}
+
+
+h1 {
+    color: #FFFFFF;
+    background-color: #571867;
+    vertical-align: middle;
+    /* need to set top & bottom margins to 0 so there is no space between the text for the Title-Name and Title-Subheading  */
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20px;
+    font-size: 250%;
+    font-family:'Monotype Corsiva','Apple Chancery','ITC Zapf Chancery','URW Chancery L',cursive;
+    text-align: center;
+}
+
+.layout__add-items {
+    width: 50%;
+    padding:20px;
+    text-align: center;
+    border: 2px solid blue;
+}
+
+footer {
+    text-align: center;
+    padding: 20px ;
+    font-size: 80%;
+    background-color: #571867;
+    color: #FFFFFF;
+}
