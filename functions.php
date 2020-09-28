@@ -43,7 +43,7 @@ on `films`.`genre` = `genre`.`id`' );
 
     $result = $query->fetchAll();
     return $result;
-    
+
 }
 
 function displayFilmsWithoutRoles($result){
