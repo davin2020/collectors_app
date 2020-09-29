@@ -1,6 +1,7 @@
 <?php
 
-function getAllFilmsWithoutRoles(string $db_name):  array {
+function getAllFilmsWithoutRoles(string $db_name):  array
+{
     $dsn = 'mysql:host=db;dbname=' . $db_name;
     $db = new PDO($dsn,'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -13,7 +14,8 @@ function getAllFilmsWithoutRoles(string $db_name):  array {
     return $result;
 }
 
-function getAllRolesForFilms(string $db_name):  array {
+function getAllRolesForFilms(string $db_name):  array
+{
     $dsn = 'mysql:host=db;dbname=' . $db_name;
     $db = new PDO($dsn,'root', 'password');
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -28,7 +30,8 @@ function getAllRolesForFilms(string $db_name):  array {
     return $result;
 }
 
-function displayFilmsAndRoles($result_films, $result_roles): string{
+function displayFilmsAndRoles($result_films, $result_roles): string
+{
     $film_results = "";
     // show all the films
     foreach($result_films as $key => $value) {
