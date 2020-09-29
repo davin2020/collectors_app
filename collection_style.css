@@ -1,0 +1,78 @@
+/* CSS file for Collections App - use rems or something with font sizes */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+    background-color: #2A546E ;
+    font-family: Verdana, sans-serif;
+}
+
+p {
+    font-size:1rem;
+}
+
+li {
+    font-size:1rem;
+}
+
+.layout__collections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    width: 100%;
+}
+
+.layout__button-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+    width: 100%;
+}
+
+.container__film {
+    background-color: #468CB8;
+    padding: 25px;
+    margin: 20px;
+    flex: 1 1 250px;
+}
+
+h1 {
+    color: #FFFFFF;
+    background-color: #571867;
+    vertical-align: middle;
+    padding: 20px;
+    font-size: 2rem;
+    font-family:'Monotype Corsiva','Apple Chancery','ITC Zapf Chancery','URW Chancery L',cursive;
+    text-align: center;
+}
+h2{
+    font-size: 1.2rem;
+}
+.layout__add-items {
+    width: 50%;
+    padding:20px;
+    margin: 20px;
+    text-align: center;
+    background-color: #A9A9A9;
+    border: 2px solid #000000;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.5rem;
+    background-color: #571867;
+    color: #FFFFFF;
+}
+
+/* COLORS
+skyblue #1C384A
+lightsteelblue #387093
+*/
