@@ -9,8 +9,8 @@ class Functions extends TestCase
     public function testSuccess1_displayFilmsAndRoles()
     {
         $inputFilms = [
-            [ 'id'=>  1, 'title' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror' ],
-            [ 'id'=>  2, 'title' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama' ]
+            ['id'=>  1, 'title' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror'],
+            ['id'=>  2, 'title' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama']
         ];
         $inputFilmRoles = [
             ["film-id"=> "1", "name"=>  "producer", "id"=> 1],
@@ -28,8 +28,8 @@ class Functions extends TestCase
     public function testFailure1_displayFilmsAndRolesWrongId()
     {
         $inputFilms = [
-            [ 'ids'=>  1, 'title' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror' ],
-            [ 'ids'=>  2, 'title' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama' ]
+            ['ids'=>  1, 'title' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror'],
+            ['ids'=>  2, 'title' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama']
         ];
         $inputFilmRoles = [
             ["film-id"=> "1", "name"=>  "producer", "id"=> 1],
@@ -47,8 +47,8 @@ class Functions extends TestCase
     public function testFailure1_displayFilmsAndRolesWrongTitle()
     {
         $inputFilms = [
-            [ 'id'=>  1, 'titles' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror' ],
-            [ 'id'=>  2, 'titles' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama' ]
+            ['id'=>  1, 'titles' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror'],
+            ['id'=>  2, 'titles' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama']
         ];
         $inputFilmRoles = [
             ["film-id"=> "1", "name"=>  "producer", "id"=> 1],
@@ -66,8 +66,8 @@ class Functions extends TestCase
     public function testFailure1_displayFilmsAndRolesWrongRoleName()
     {
         $inputFilms = [
-            [ 'id'=>  1, 'title' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror' ],
-            [ 'id'=>  2, 'title' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama' ]
+            ['id'=>  1, 'title' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror'],
+            ['id'=>  2, 'title' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama']
         ];
         $inputFilmRoles = [
             ["film-id"=> "1", "names"=>  "producer", "id"=> 1],
@@ -100,8 +100,8 @@ class Functions extends TestCase
     public function testMalformed2_displayFilmsAndRoles()
     {
         $inputFilms = [
-            [ 'id'=>  1, 'titles' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror' ],
-            [ 'id'=>  2, 'titles' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama' ]
+            ['id'=>  1, 'titles' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror'],
+            ['id'=>  2, 'titles' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama']
         ];
         $inputFilmRoles = 222;
         $this->expectException(TypeError::class);
