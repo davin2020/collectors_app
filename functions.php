@@ -5,9 +5,7 @@
  */
 function getDBConnection(string $db_name): object {
     $dsn = 'mysql:host=db;dbname=' . $db_name;
-//    var_dump($dsn);
     $db = new PDO($dsn,'root', 'password');
-//    var_dump($db);
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
@@ -44,35 +42,6 @@ function getAllRolesForFilms(object $db):  array
     return $result;
 }
 
-/** REMOVE THIS
- * Function to display all the films in the collection, and for each film, display all the roles that I did for that flm
- */
-function displayFilmsAndRolesOLD(array $result_films, array $result_roles): string
-{
-    $film_results = "";
-    // show all the films
-    //CHECK if keys exist first, then make empty str if dont exist
-        foreach ($result_films as $key => $value) { // im not even using the value here
-            $film_results .= '<article class="container__film">'
-                . '<h2>Film: ' . $result_films[$key]['title'] . '</h2>'
-                . '<p>ID: ' . $result_films[$key]['id'] . '</p>'
-                . '<p>Year Produced: ' . $result_films[$key]['year_produced'] . '</p>'
-                . '<p>Genre: ' . $result_films[$key]['type'] . '</p>'
-                . '<p>My Roles: </p>'
-                . '<ul>';
-            //for each film, shows the roles I did - //CHECK if keys exist first, then make empty str if dont exist
-            foreach ($result_roles as $key_role => $value_role) {
-                if ($result_films[$key]['id'] == $result_roles[$key_role]['film-id']) {
-                    $film_results .= '<li>' . $result_roles[$key_role]['name'] . '</li>';
-                }
-            }
-            $film_results .= '</ul>'
-                . '</article>';
-        }
-    return $film_results;
-
-}
-
 /**
  * Function to display all the films in the collection, and for each film, display all the roles that I did for that film. If film id or title is missing, dont show any details of the film and move onto showing the next film
  */
@@ -107,6 +76,5 @@ function displayFilmsAndRoles(array $result_films, array $result_roles): string
     }
     return $film_results;
 }
-
 
 ?>
