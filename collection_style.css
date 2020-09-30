@@ -5,9 +5,7 @@
 }
 
 body {
-    /*changed so i can see error msg & vardump for now */
-    font-size: 100%;
-    /*font-size: 62.5%;*/
+    font-size: 62.5%;
     padding: 0;
     margin: 0;
     background-color: #2A546E ;
