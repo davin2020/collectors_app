@@ -18,7 +18,6 @@ class Functions extends TestCase
             ["film-id"=> "1", "name"=>  "camera operator", "id"=> 6]
         ];
         $expectedOutput = '<article class="container__film"><h2>Film: The Arms Dealer</h2><p>Year Produced: 2018-10-01</p><p>Genre: horror</p><p>My Roles: </p><ul><li>producer</li><li>writer</li><li>camera operator</li></ul></article><article class="container__film"><h2>Film: Buddy\'s Budget Hitman Service</h2><p>Year Produced: 2019-08-20</p><p>Genre: drama</p><p>My Roles: </p><ul></ul></article>';
-//        var_dump($inputFilms);
         $result = displayFilmsAndRoles($inputFilms, $inputFilmRoles);
         $this->assertEquals($expectedOutput, $result);
     }
@@ -38,7 +37,6 @@ class Functions extends TestCase
             ["film-id"=> "1", "name"=>  "camera operator", "id"=> 6]
         ];
         $expectedOutput = '';
-//            var_dump($inputFilms);
         $result = displayFilmsAndRoles($inputFilms, $inputFilmRoles);
         $this->assertEquals($expectedOutput, $result);
     }
@@ -58,7 +56,6 @@ class Functions extends TestCase
             ["film-id"=> "1", "name"=>  "camera operator", "id"=> 6]
         ];
         $expectedOutput = '';
-//        var_dump($inputFilms);
         $result = displayFilmsAndRoles($inputFilms, $inputFilmRoles);
         $this->assertEquals($expectedOutput, $result);
     }
@@ -78,17 +75,16 @@ class Functions extends TestCase
             ["film-id"=> "1", "names"=>  "camera operator", "id"=> 6]
         ];
        $expectedOutput = '<article class="container__film"><h2>Film: The Arms Dealer</h2><p>Year Produced: 2018-10-01</p><p>Genre: horror</p><p>My Roles: </p><ul></ul></article><article class="container__film"><h2>Film: Buddy\'s Budget Hitman Service</h2><p>Year Produced: 2019-08-20</p><p>Genre: drama</p><p>My Roles: </p><ul></ul></article>';
-//        var_dump($inputFilms);
         $result = displayFilmsAndRoles($inputFilms, $inputFilmRoles);
         $this->assertEquals($expectedOutput, $result);
     }
 
     /**
-     * Tests for Malformed input of array $inputFilms[]
+     * Tests for Malformed input of string instead of expected array for $inputFilms[]
      */
     public function testMalformed1_displayFilmsAndRoles()
     {
-        $inputFilms = 'my new film'; // input string instead of expected array
+        $inputFilms = 'my new film';
         $inputFilmRoles = [
             ["film-id"=> "1", "name"=>  "producer", "id"=> 1],
             ["film-id"=> "1", "name"=>  "writer", "id"=> 2],
@@ -99,7 +95,7 @@ class Functions extends TestCase
     }
 
     /**
-     * Tests for Malformed input of array $inputFilmRoles[]
+     * Tests for Malformed input of int instead of expected array for $inputFilmRoles[]
      */
     public function testMalformed2_displayFilmsAndRoles()
     {
@@ -107,7 +103,7 @@ class Functions extends TestCase
             [ 'id'=>  1, 'titles' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror' ],
             [ 'id'=>  2, 'titles' => 'Buddy\'s Budget Hitman Service', 'year_produced' =>  '2019-08-20', 'type' => 'drama' ]
         ];
-        $inputFilmRoles = 222; // input int instead of expected array
+        $inputFilmRoles = 222;
         $this->expectException(TypeError::class);
         $result = displayFilmsAndRoles($inputFilms, $inputFilmRoles);
     }

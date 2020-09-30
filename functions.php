@@ -57,7 +57,6 @@ function displayFilmsAndRoles(array $result_films, array $result_roles): string
         {
             $film_results .= '<article class="container__film">'
                 . '<h2>Film: ' . $film['title'] . '</h2>'
-//                . '<p>ID: ' . $film['id'] . '</p>'
                 . '<p>Year Produced: ' . $film['year_produced'] . '</p>'
                 . '<p>Genre: ' . $film['type'] . '</p>'
                 . '<p>My Roles: </p>'
