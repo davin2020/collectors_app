@@ -24,6 +24,8 @@ require ('functions.php');
             $result_films =  getAllFilmsWithoutRoles($db);
             $result_film_roles =  getAllRolesForFilms($db);
 //            echo '<h3>NEW displayFilmsAndRolesNEW</h3>';
+//            var_dump($result_film_roles);
+//            echo '<br>';
             echo displayFilmsAndRoles($result_films, $result_film_roles);
             ?>
     </section>

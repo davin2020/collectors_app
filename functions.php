@@ -62,9 +62,10 @@ function displayFilmsAndRoles(array $result_films, array $result_roles): string
                 . '<p>Genre: ' . $film['type'] . '</p>'
                 . '<p>My Roles: </p>'
                 . '<ul>';
-            // iterate over inner array of film roles, and show each role where the film id matches
+            // iterate over inner array of film roles...
             foreach ($result_roles as $film_role) {
-                if ($film['id'] == $film_role['film-id']) {
+                // ...and show each film role where the film id matches AND the role name is present
+                if ($film['id'] == $film_role['film-id'] && array_key_exists('name', $film_role) ) {
                     $film_results .= '<li>' . $film_role['name'] . '</li>';
                 }
             }
