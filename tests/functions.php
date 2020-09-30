@@ -25,7 +25,7 @@ class Functions extends TestCase
     /**
      * Tests for Failure if the required field 'id' is spelled incorrectly ie doesnt exist - if other fields are mis-spelled (eg year or type) then their value is shown as blank, as a film without an id or title should not be shown at all
      */
-    public function testFailure1_displayFilmsAndRolesWrongId()
+    public function testFailure1_displayFilmsAndRolesWrongKeyId()
     {
         $inputFilms = [
             ['ids'=>  1, 'title' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror'],
@@ -44,7 +44,7 @@ class Functions extends TestCase
     /**
      * Tests for Failure if the required field 'title' is spelled incorrectly ie doesnt exist - if other fields are mis-spelled (eg year or type) then their value is shown as blank, as a film without an id or title should not be shown at all
      */
-    public function testFailure1_displayFilmsAndRolesWrongTitle()
+    public function testFailure1_displayFilmsAndRolesWrongKeyTitle()
     {
         $inputFilms = [
             ['id'=>  1, 'titles' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror'],
@@ -63,7 +63,7 @@ class Functions extends TestCase
     /**
      * Tests for Failure if the required field film role 'name' in the linking table is spelled incorrectly
      */
-    public function testFailure1_displayFilmsAndRolesWrongRoleName()
+    public function testFailure1_displayFilmsAndRolesWrongKeyRoleName()
     {
         $inputFilms = [
             ['id'=>  1, 'title' => 'The Arms Dealer', 'year_produced' =>  '2018-10-01', 'type' => 'horror'],
