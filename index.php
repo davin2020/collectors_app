@@ -35,8 +35,15 @@ require ('functions.php');
 //            echo '<br><br>result_film_roles<br>';
 //            var_dump($result_film_roles);
 
-            echo '<br><br>';
+//            echo '<br><br>';
+//            echo displayFilmsAndRolesOLD($result_films, $result_film_roles);
+
+            echo '<h3>NEW displayFilmsAndRolesNEW</h3>';
             echo displayFilmsAndRoles($result_films, $result_film_roles);
+
+//            echo 'vardump';
+//            $tmp = displayFilmsAndRolesNEW($result_films, $result_film_roles);
+//            var_dump($tmp);
             ?>
     </section>
     <section class="layout__button-area">

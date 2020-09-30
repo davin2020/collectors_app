@@ -20,7 +20,8 @@ function getAllFilmsWithoutRoles(object $db):  array
 {
     $query = $db->prepare('select `films`.`id`, `title`, `year_produced`, `type` from `films` 
         join `genre`
-        on `films`.`genre` = `genre`.`id`' );
+        on `films`.`genre` = `genre`.`id` 
+        where `is_deleted` = false' );
     $query->execute();
     $result = $query->fetchAll();
     return $result;
@@ -36,7 +37,8 @@ function getAllRolesForFilms(object $db):  array
         join `film_roles`
         on `films`.`id` = `film_roles`.`film_id` 
         join `roles`
-        on `roles`.`id` = `film_roles`.`role_id`' );
+        on `roles`.`id` = `film_roles`.`role_id` 
+        where `is_deleted` = false' );
     $query->execute();
     $result = $query->fetchAll();
     return $result;
@@ -49,7 +51,7 @@ function getAllRolesForFilms(object $db):  array
 //if(isset($values['year']))
 
 
-function displayFilmsAndRoles(array $result_films, array $result_roles): string
+function displayFilmsAndRolesOLD(array $result_films, array $result_roles): string
 {
     $film_results = "";
     // show all the films
@@ -72,43 +74,46 @@ function displayFilmsAndRoles(array $result_films, array $result_roles): string
                 . '</article>';
         }
     return $film_results;
+
 }
 
-function displayFilmsAndRolesNEW(array $result_films, array $result_roles): string
+function displayFilmsAndRoles(array $result_films, array $result_roles): string
 {
     $film_results = "";
-    // show all the films
-    //CHECK if keys exist first, then make empty str if dont exist
-    if (array_key_exists("id", $result_films)){
-        echo 'FOUND ID';
-    }
-    if(array_key_exists("id", $result_films)
-        && array_key_exists("title", $result_films)
-        && array_key_exists('year_produced', $result_films)
-        && array_key_exists('type', $result_films))
-    {
-        foreach ($result_films as $key => $value) { // im not even using the value here
-            if (array_key_exists("id", $result_films[$key]) ){
-                echo 'FOUND ID 22222';
-            }
-            $film_results .= '<article class="container__film">'
-                . '<h2>Film: ' . $result_films[$key]['title'] . '</h2>'
-                . '<p>ID: ' . $result_films[$key]['id'] . '</p>'
-                . '<p>Year Produced: ' . $result_films[$key]['year_produced'] . '</p>'
-                . '<p>Genre: ' . $result_films[$key]['type'] . '</p>'
-                . '<p>My Roles: </p>'
-                . '<ul>';
-            //for each film, shows the roles I did - //CHECK if keys exist first, then make empty str if dont exist
-            foreach ($result_roles as $key_role => $value_role) {
-                if ($result_films[$key]['id'] == $result_roles[$key_role]['film-id']) {
-                    $film_results .= '<li>' . $result_roles[$key_role]['name'] . '</li>';
-                }
-            }
-            $film_results .= '</ul>'
-                . '</article>';
+//    var_dump($result_films);
+
+    //result film is outside array, key value is for elements inside
+//    foreach($result_films as $key => $value) {
+    //CHECK if keys exist first, then make empty str if dont exist - doesnt work for 2D arrays array_key_exists
+    foreach($result_films as $film) {
+//        if (array_key_exists('id', $film) && array_key_exists('title', $film) && ($film['title'] != "" ) ) {
+//            echo '<br><br>FOUND KEY ID + TITLE using KEY EXISTS ';
+//        }
+
+        //does key ie  var exist, rather than is it null?
+        //but if its null it returns false & thus doesnt get shown if i break out of loop?
+//        if(isset($film['id']) && isset($film['title']) && ($film['title'] != "" )) {
+
+        if (array_key_exists('id', $film) && array_key_exists('title', $film) && ($film['title'] != "" ) ) {
+            echo '<br><br>FOUND ID & TITLE';
+            $film_results .= '<article class="container__film">';
+            // if titles empty it still shows a empty blue box
+                    $film_results .= '<h2>Film: ' . $film['title'] . '</h2>' //doesnt show title if null but shows it if its blank
+                    . '<p>ID: ' . $film['id'] . '</p>'
+                    . '<p>Year Produced: ' . $film['year_produced'] . '</p>'
+                    . '<p>Genre: ' . $film['type'] . '</p>'
+                    . '<p>My Roles: </p>'
+                    . '<ul>';
+                    foreach ($result_roles as $film_role) {
+                        if ($film['id'] == $film_role['film-id']) {
+                            $film_results .= '<li>' . $film_role['name'] . '</li>';
+                        }
+                    }
+                    $film_results .= '</ul>'
+                        . '</article>';
+        } else { //if a film id or title is missing,skip that film and move onto the next one
+            $film_results .= "";
         }
-    } else { // one  of the film keys is missing, so return empty string
-        $film_results = "";
     }
     return $film_results;
 }
