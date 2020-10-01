@@ -13,7 +13,7 @@ require ('functions.php');
 </head>
 <body>
 <header>
-    <h1>Collection of  Short Films I've Worked On</h1>
+    <h1>Collection of Short Films I've Worked On</h1>
 </header>
 <main>
     <div></div>
@@ -25,11 +25,6 @@ require ('functions.php');
             $result_film_roles =  getAllRolesForFilms($db);
             echo displayFilmsAndRoles($result_films, $result_film_roles);
             ?>
-    </section>
-    <section class="layout__button-area">
-        <section class="layout__add-items">
-            <div><a href="change.php">Add Film</a></div>
-        </section>
     </section>
 </main>
 <footer>
