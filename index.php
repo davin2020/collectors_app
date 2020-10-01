@@ -19,10 +19,10 @@ require ('functions.php');
     <div></div>
     <section class="layout__collections">
             <?php
-            //use var for $collectors_db
             $db_name = 'collectors_db';
-            $result_films =  getAllFilmsWithoutRoles($db_name);
-            $result_film_roles =  getAllRolesForFilms($db_name);
+            $db = getDBConnection($db_name);
+            $result_films =  getAllFilmsWithoutRoles($db);
+            $result_film_roles =  getAllRolesForFilms($db);
             echo displayFilmsAndRoles($result_films, $result_film_roles);
             ?>
     </section>
